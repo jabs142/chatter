@@ -5,7 +5,7 @@ from django.db import models
 class Room(models.Model):
     # host =
     # topic= 
-    name = models.CharField(max_Length =200) # specify the attribute and its value
+    name = models.CharField(max_length =200) # specify the attribute and its value
     description = models.TextField(null = True, blank = True) # by default null is set to False. Null = true means description can be blank. Null is for database and blank is for the form
     # participants = 
     updated = models.DateTimeField(auto_now = True) #snapshot every time we save

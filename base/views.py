@@ -1,11 +1,15 @@
 from django.shortcuts import render, redirect 
-from .models import Room #import the model you want to query
+from .models import Room, Topic #import the model you want to query
 from .forms import RoomForm
 # Create your views here.
 
-def home(request):
-    rooms = Room.objects.all() #querying the rooms from the database 
-    context = {'rooms': rooms}
+def home(request): 
+    q = request.GET.get('q') if request.GET.get('q') != None else ''
+    rooms = Room.objects.filter(topic__name__icontains=q) #querying the rooms from the database 
+
+    topics = Topic.objects.all()
+
+    context = {'rooms': rooms, 'topics': topics}
     return render(request, 'base/home.html',context)
 
 def room(request,pk):

@@ -1,21 +1,13 @@
 from django.shortcuts import render
-
+from .models import Room #import the model you want to query
 # Create your views here.
 
-rooms = [
-    {'id':1, 'name':'Django support group'},
-    {'id':2, 'name':'Debugging Django'},
-    {'id':3, 'name':'React study group'},
-]
-
 def home(request):
+    rooms = Room.objects.all() #querying the rooms from the database 
     context = {'rooms': rooms}
     return render(request, 'base/home.html',context)
 
 def room(request,pk):
-    room = None
-    for i in rooms:
-        if i['id'] == int(pk):
-            room = i;
+    room = Room.objects.get(id=pk)
     context = {'room': room};
     return render(request, 'base/room.html', context)

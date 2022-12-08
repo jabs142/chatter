@@ -24,9 +24,17 @@ def loginPage(request):
         if user is not None: 
             login(request, user)
             return redirect('home')
+        else:
+            messages.error(request, 'Username or password does not exist')
 
     context={}
     return render(request, 'base/login.html', context)
+
+
+def logoutUser(request):
+    logout(request)
+    return redirect('home')
+
 
 def home(request): 
     q = request.GET.get('q') if request.GET.get('q') != None else ''

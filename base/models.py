@@ -13,7 +13,7 @@ class Room(models.Model):
     topic= models.ForeignKey(Topic, on_delete=models.SET_NULL, null = True)
     name = models.CharField(max_length =200) # specify the attribute and its value
     description = models.TextField(null = True, blank = True) # by default null is set to False. Null = true means description can be blank. Null is for database and blank is for the form
-    # participants = 
+    participants = models.ManyToManyField(User, related_name='participants', blank=True)
     updated = models.DateTimeField(auto_now = True) #snapshot every time we save
     created = models.DateTimeField(auto_now_add = True) #snapshot the first time we add it
 

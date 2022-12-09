@@ -1,23 +1,74 @@
 {% extends 'main.html' %}
+{% load static %}
 
 {% block content %}
+<main class="profile-page layout layout--3">
+  <div class="container">
+    <!-- Topics Start -->
+    {% include 'base/topics_component.html' %}
+    <!-- Topics End -->
 
-<style>
-    .profile-container {
-        display: grid;
-        grid-template-columns: 1fr 3fr
-    }
-</style>
+    <!-- Room List Start -->
+    <div class="roomList">
+      <div class="profile">
+        <div class="profile__avatar">
+          <div class="avatar avatar--large active">
+            <img src="" />
+          </div>
+        </div>
+        <div class="profile__info">
+          <h3>{{user.name}}</h3>
+          <p>@{{user.username}}</p>
+          {% if request.user == user %}
+          <a href="edit-user.html" class="btn btn--main btn--pill">Edit Profile</a>
+          {% endif %}
+        </div>
+        <div class="profile__about">
+          <h3>About</h3>
+          <p>
+            Insert text
+          </p>
+        </div>
+      </div>
 
-<h1> {{user.username}}</h1>
+      {% include 'base/feed_component.html' %}
 
-<div class='profile-container'>
-    <div>
-        {% include 'base/topics_component.html' %}
+
     </div>
-    <div>
-        {% include 'base/feed_component.html' %}
-    </div>
-</div>
+    <!-- Room List End -->
 
+    <div class="activities">
+        <div class="activities__header">
+          <h2>Participants online</h2>
+        </div>
+        <div class="activities__box">
+          <div class="activities__boxHeader roomListRoom__header">
+            <a href="profile.html" class="roomListRoom__author">
+              <div class="avatar avatar--small">
+                <img src="static/images/avatar1.png" />
+              </div>
+              <p>
+                @Avatar 1
+              </p>
+            </a>
+          </div>
+        </div>
+  
+        <div class="activities__box">
+          <div class="activities__boxHeader roomListRoom__header">
+            <a href="profile.html" class="roomListRoom__author">
+              <div class="avatar avatar--small">
+                <img src="static/images/avatar1.png" />
+              </div>
+              <p>
+                @Avatar 2
+              </p>
+            </a>
+          </div>
+        </div>
+  
+      </div>
+
+  </div>
+</main>
 {% endblock content %}

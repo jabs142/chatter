@@ -1,12 +1,51 @@
-<h3>Search for breakoutrooms</h3>
-<hr>
+<div class="topics">
+    <div class="activities__header">
+        <h2> Room topics </h2>
+    </div>
+    <div class="activities__box">
+        <ul class="topics__list">
+            <li>
+                <a href="{% url 'home' %}">All <span>{{topics.count}}</span></a>
+            </li>
+            {% for topic in topics %}
+            <li>
+                <a href="{% url 'home' %}?q={{topic.name}}">{{topic.name}}<span>{{topic.room_set.all.count}}</span></a>
+            </li>
+            {% endfor %}
 
-<div>
-    <a href="{% url 'home' %}"> All </a>
-</div>
+        </ul>
+    </div>
 
-{% for topic in topics %}
-<div>
-    <a href="{% url 'home' %}?q={{topic.name}}"> {{topic.name}}</a>
 </div>
-{% endfor %}
+<!-- 
+<div class="activities">
+        <div class="activities__header">
+          <h2>Participants online</h2>
+        </div>
+        <div class="activities__box">
+          <div class="activities__boxHeader roomListRoom__header">
+            <a href="profile.html" class="roomListRoom__author">
+              <div class="avatar avatar--small">
+                <img src="static/images/avatar1.png" />
+              </div>
+              <p>
+                @Avatar 1
+              </p>
+            </a>
+          </div>
+        </div>
+  
+        <div class="activities__box">
+            <div class="activities__boxHeader roomListRoom__header">
+              <a href="profile.html" class="roomListRoom__author">
+                <div class="avatar avatar--small">
+                  <img src="static/images/avatar1.png" />
+                </div>
+                <p>
+                  @Avatar 2
+                </p>
+              </a>
+            </div>
+          </div>
+  
+      </div> -->

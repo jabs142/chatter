@@ -1,5 +1,10 @@
+{% load static %}
+
 <a href="/">
-    <h1> This is our navbar</h1>
+    <span>
+        <img src="{% static 'images/chatter.png' %}" />
+        <h1> This is our navbar</h1>
+    </span> 
 </a>
 
 <form method="GET" action="{% url 'home' %}">

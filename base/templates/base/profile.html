@@ -11,7 +11,7 @@
     <!-- Room List Start -->
     <div class="roomList">
       <div class="profile">
-        <div class="profile__avatar">
+        <!-- <div class="profile__avatar">
           <div class="avatar avatar--large active">
             <img src="" />
           </div>
@@ -22,12 +22,9 @@
           {% if request.user == user %}
           <a href="edit-user.html" class="btn btn--main btn--pill">Edit Profile</a>
           {% endif %}
-        </div>
+        </div> -->
         <div class="profile__about">
-          <h3>About</h3>
-          <p>
-            Insert text
-          </p>
+          <h3> Groups @{{user.username}} is in </h3>
         </div>
       </div>
 
@@ -38,36 +35,36 @@
     <!-- Room List End -->
 
     <div class="activities">
-        <div class="activities__header">
-          <h2>Participants online</h2>
-        </div>
-        <div class="activities__box">
-          <div class="activities__boxHeader roomListRoom__header">
-            <a href="profile.html" class="roomListRoom__author">
-              <div class="avatar avatar--small">
-                <img src="static/images/avatar1.png" />
-              </div>
-              <p>
-                @Avatar 1
-              </p>
-            </a>
-          </div>
-        </div>
-  
-        <div class="activities__box">
-          <div class="activities__boxHeader roomListRoom__header">
-            <a href="profile.html" class="roomListRoom__author">
-              <div class="avatar avatar--small">
-                <img src="static/images/avatar1.png" />
-              </div>
-              <p>
-                @Avatar 2
-              </p>
-            </a>
-          </div>
-        </div>
-  
+      <div class="activities__header">
+        <h2>Participants online</h2>
       </div>
+      <div class="activities__box">
+        <div class="activities__boxHeader roomListRoom__header">
+          <a href="profile.html" class="roomListRoom__author">
+            <div class="avatar avatar--small">
+              <img src="static/images/avatar1.png" />
+            </div>
+            <p>
+              @Avatar 1
+            </p>
+          </a>
+        </div>
+      </div>
+
+      <div class="activities__box">
+        <div class="activities__boxHeader roomListRoom__header">
+          <a href="profile.html" class="roomListRoom__author">
+            <div class="avatar avatar--small">
+              <img src="static/images/avatar1.png" />
+            </div>
+            <p>
+              @Avatar 2
+            </p>
+          </a>
+        </div>
+      </div>
+
+    </div>
 
   </div>
 </main>

@@ -1,15 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 
 :root {
-  --color-main: #ebf0f4;
+  --color-main: #61828a;
   --color-main-light: #d8aeda;
-  --color-dark: #5470a7;
-  --color-dark-medium: #bdc0d8;
-  --color-dark-light: #595c87;
-  --color-light: #e5e5e5;
+  --color-dark: #abc3cd;
+  --color-dark-medium: #61828A;
+  --color-dark-light: #61828a;
+  --color-light: #DfE9Eb;
   --color-gray: #8b8b8b;
-  --color-light-gray: #03254c;
-  --color-bg: #dce4e9;
+  --color-light-gray: #DfE9Eb;
+  --color-bg: #DfE9Eb;
   --color-success: #5dd693;
   --color-error: #fc4b0b;
 }
@@ -60,6 +60,7 @@ a {
   color: var(--color-main);
   text-decoration: none;
 }
+
 
 /*========== components ==========*/
 .container {
@@ -289,11 +290,11 @@ a {
 .header__logo > h1 {
   font-weight: 700;
   font-size: 2rem;
-  color: var(--color-light);
+  color: var(--color-main);
 }
 
 .header__search > label {
-  background-color: var(--color-dark-medium);
+  background-color: var(--color-light-gray);
   padding: 1.3rem 1rem;
   display: flex;
   align-items: center;
@@ -449,7 +450,7 @@ a {
 .layout__boxTitle h3 {
   text-transform: uppercase;
   font-weight: 500;
-  color: var(--color-light);
+  color: var(--color-dark);
 }
 
 .layout__boxTitle svg {
@@ -574,7 +575,7 @@ a {
   justify-content: space-between;
   margin-bottom: 3rem;
   font-weight: 500;
-  color: var(--color-light-gray);
+  color: var(--color-dark-light);
   transition: all 0.3s ease-in-out;
 }
 
@@ -686,7 +687,7 @@ a {
   font-size: 2rem;
   font-weight: 500;
   margin-bottom: 1.5rem;
-  color: var(--color-light);
+  color: var(--color-dark-medium);
   transition: all 0.3s ease-in-out;
 }
 
@@ -1075,7 +1076,7 @@ a {
 }
 
 .thread__top svg {
-  fill: var(--color-dark-light);
+  fill: var(--color-dark-medium);
 }
 
 .thread__author {
@@ -1094,6 +1095,7 @@ a {
 .thread__details {
   font-size: 1.4rem;
   margin-top: 0.5rem;
+  color: var(--color-dark-medium);
 }
 
 .room__message {

@@ -12,10 +12,19 @@
             <div class="avatar avatar--small">
                 <img src="static/images/avatar1.png" />
             </div>
-            <span>@{{room.host.username}}</span>
+            <span>
+                @{{room.host.username}}
+                {% if request.user == room.host%}
+                <div class="edit-delete">
+                    <a href="{% url 'update-room' room.id %}"> Edit </a>
+                    <a href="{% url 'delete-room' room.id %}"> Delete </a>
+                </div>
+                {% endif %}
+
+            </span>
         </a>
         <div class="roomListRoom__actions">
-            <span> {{room.created | timesince }}days ago</span>
+            <span> {{room.created | timesince }} ago</span>
         </div>
     </div>
     <div class="roomListRoom__content">
@@ -24,12 +33,7 @@
     <div class="roomListRoom__meta">
         <p class="roomListRoom__topic">{{room.topic.name}}</p>
     </div>
-    {% if request.user == room.host%}
-    <div class="edit-delete">
-        <a href="{% url 'update-room' room.id %}"> Edit </a>
-        <a href="{% url 'delete-room' room.id %}"> Delete </a>
-    </div>
-    {% endif %}
+
 </div>
 
 {% endfor %}

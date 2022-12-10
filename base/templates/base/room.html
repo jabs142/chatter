@@ -1,6 +1,17 @@
 {% extends 'main.html' %}
 {% load static %}
 
+<style>
+  .username-font {
+    color: black
+  }
+
+  .message-font {
+    color: rgb(208, 202, 202)
+  }
+</style>
+
+
 {% block content %}
 <main class="profile-page layout layout--2">
   <div class="container">
@@ -82,7 +93,7 @@
                     <div class="avatar avatar--small">
                       <img src="static/images/avatar1.png" />
                     </div>
-                    <span>@{{message.user.username}}</span>
+                    <span class="username-font">@{{message.user.username}}</span>
                   </a>
                   <span class="thread__date">{{message.created | timesince}}ago</span>
                 </div>
@@ -109,13 +120,16 @@
         </div>
       </div>
       <div class="room__message">
-        <form action="#"><input name="" placeholder="Write your message here..." /></form>
+        <form action="" method="POST">
+          {% csrf_token %}
+          <input name="body" placeholder="Write your message here..." class="message-font" />
+        </form>
       </div>
     </div>
     <!-- Room End -->
 
     <!--   Start -->
-    <div class="participants">
+    <div class=" participants">
       <h3 class="participants__top">Participants <span>{{participants.count}}</span></h3>
       <div class="participants__list scroll">
         {% for user in participants %}

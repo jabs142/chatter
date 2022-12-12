@@ -1,20 +1,19 @@
 <div class="topics">
-    <div class="activities__header">
-        <h2> Room topics </h2>
-    </div>
-    <div class="activities__box">
-        <ul class="topics__list">
-            <li>
-                <a href="{% url 'home' %}">All <span>{{topics.count}}</span></a>
+  <div class="activities__header">
+    <h2> Room topics </h2>
+  </div>
+  <div class="activities__box">
+    <ul class="topics__list">
+      <li>
             </li>
             {% for topic in topics %}
             <li>
                 <a href="{% url 'home' %}?q={{topic.name}}">{{topic.name}}<span>{{topic.room_set.all.count}}</span></a>
-            </li>
-            {% endfor %}
+      </li>
+      {% endfor %}
 
-        </ul>
-    </div>
+    </ul>
+  </div>
 
 </div>
 <!-- 

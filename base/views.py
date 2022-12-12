@@ -6,10 +6,9 @@ from django.db.models import Q
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
-from .models import Room, Topic, Message, User #import the model you want to query
+from .models import Room, Topic, Message, User
 from .forms import RoomForm, UserForm
 
-# Create your views here.
 
 def loginPage(request):
     page = 'login'
@@ -69,8 +68,9 @@ def home(request):
 
     topics = Topic.objects.all()
     room_count = rooms.count()
+    room_messages = Message.objects.all()
 
-    context = {'rooms': rooms, 'topics': topics, 'room_count': room_count}
+    context = {'rooms': rooms, 'topics': topics, 'room_count': room_count, 'room_messages':room_messages}
     return render(request, 'base/home.html',context)
 
 def room(request,pk):
@@ -173,3 +173,7 @@ def updateUser(request):
             return redirect('user-profile', pk=user.id)
 
     return render(request, 'base/update-user.html', {'form': form})
+
+def membersPage(request):
+    room_messages = Message.objects.all()
+    return render(request, 'base/members.html', {'room_messages': room_messages})

@@ -2,7 +2,6 @@
 
 :root {
   --color-main: #61828a;
-  --color-main-light: #d8aeda;
   --color-dark: #abc3cd;
   --color-dark-medium: #61828A;
   --color-dark-light: #2d5a65;
@@ -960,7 +959,7 @@ a {
 }
 
 .room__topRight svg {
-  fill: var(--color-main-light);
+  fill: var(--color-main);
 }
 
 .room__header {

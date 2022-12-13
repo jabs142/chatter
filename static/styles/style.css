@@ -98,6 +98,16 @@ a {
   color: var(--color-dark);
 }
 
+.btn--main--center {
+  background-color: var(--color-dark-medium);
+  color: var(--color-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
 .btn:hover {
   opacity: 0.9;
 }

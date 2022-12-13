@@ -3,8 +3,8 @@
 <header class="header header--loggedIn">
     <div class="container">
         <a href="{% url 'home' %}" class="header__logo">
-            <img src="{% static 'images/chatter.png' %}" />
-            <h1>Chatter</h1>
+            <img src="{% static 'images/chatter-logo.png' %}" />
+            <h1>Chatter.</h1>
         </a>
         <form class="header__search" method="GET" action="{% url 'home' %}">
             <label>
@@ -41,8 +41,11 @@
             {% else %}
 
             <!-- Not Logged In -->
-            <a href="{% url 'login' %}">
-                <p>Login</p>
+            <a href="{% url 'login' %}" class="header__logo">
+                <div class="avatar avatar--medium">
+                    <img src="static/images/default-avatar.png">
+                </div>
+                <h3>Login</h3>
             </a>
             {% endif %}
 

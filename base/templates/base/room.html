@@ -5,7 +5,6 @@
 {% block content %}
 <main class="profile-page layout layout--2">
   <div class="container">
-    <!-- Room Start -->
     <div class="room">
       <div class="room__top">
         <div class="room__topLeft">
@@ -61,7 +60,7 @@
           <div class="room__hosted">
             <h3>Room Created By</h3>
             <a href="{% url 'user-profile' room.host.id %}" class="room__author">
-              <div class="avatar avatar--small">
+              <div class="avatar avatar--medium">
                 <img src="{{room.host.avatar.url}}" />
               </div>
               <span>@{{room.host.username}}</span>
@@ -80,12 +79,12 @@
               <div class="thread__top">
                 <div class="thread__author">
                   <a href="{% url 'user-profile' message.user.id %}" class="thread__authorInfo">
-                    <div class="avatar avatar--small">
+                    <div class="avatar avatar--medium">
                       <img src="{{message.user.avatar.url}}" />
                     </div>
                     <span class="username-font">@{{message.user.username}}</span>
                   </a>
-                  <span class="thread__date">{{message.created | timesince}}ago</span>
+                  <span class="thread__date">{{message.created | timesince}} ago</span>
                 </div>
                 {% if request.user == message.user %}
                 <a href="{% url 'delete-message' message.id %}">
@@ -116,11 +115,11 @@
         </form>
       </div>
     </div>
-    <!-- Room End -->
 
-    <!--   Start -->
+
+
     <div class=" participants">
-      <h3 class="participants__top">Participants <span>{{participants.count}}</span></h3>
+      <h3 class="participants__top">Participants <span> {{participants.count}} </span></h3>
       <div class="participants__list scroll">
         {% for user in participants %}
         <a href="{% url 'user-profile' user.id %}" class="participant">
@@ -128,7 +127,6 @@
             <img src="{{user.avatar.url}}" />
           </div>
           <p>
-            {{user.username}}
             <span>@{{user.username}}</span>
           </p>
         </a>
@@ -136,7 +134,6 @@
 
       </div>
     </div>
-    <!--  End -->
   </div>
 </main>
 

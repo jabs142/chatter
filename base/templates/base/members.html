@@ -1,3 +1,5 @@
+{% if page == 'login' %}
+
 <div class="activities">
     <div class="activities__header">
         <h2> Members </h2>
@@ -22,5 +24,60 @@
     </div>
     {% endifchanged %}
     {% endfor %}
+</div>
+
+{% else %}
+
+<div class="activities">
+    <div class="activities__header">
+        <h2> Members </h2>
+    </div>
+
+    <div class="activities__box1">
+        <div class="activities__boxHeader roomListRoom__header">
+            <a href="{% url 'login' %}" class="roomListRoom__author">
+                <div class="avatar avatar--small">
+                    <img src="static/images/default-avatar.png" />
+                </div>
+                <p>
+                    @I_AM_SWE
+                </p>
+            </a>
+        </div>
+    </div>
+
+
+    <div class="activities__box1">
+        <div class="activities__boxHeader roomListRoom__header">
+            <a href="{% url 'login' %}" class="roomListRoom__author">
+                <div class="avatar avatar--small">
+                    <img src="static/images/default-avatar.png" />
+                </div>
+                <p>
+                    @Django_Anonymous
+                </p>
+            </a>
+        </div>
+    </div>
+
+    <div class="activities__box1">
+        <div class="activities__boxHeader roomListRoom__header">
+            <a href="{% url 'login' %}" class="roomListRoom__author">
+                <div class="avatar avatar--small">
+                    <img src="static/images/default-avatar.png" />
+                </div>
+                <p>
+                    @Python_Dev
+                </p>
+            </a>
+        </div>
+    </div>
+
+
+
 
 </div>
+
+</div>
+
+{% endif %}

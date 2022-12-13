@@ -7,6 +7,8 @@
 
     {% include 'base/topics_component.html' %}
 
+    {% if page == 'login' %}
+
     <div class="roomList">
       <div class="roomList__header">
         <div>
@@ -25,7 +27,20 @@
 
       {% include 'base/feed_component.html' %}
 
+      {% else %}
+      <div class="roomList">
+          <div class="roomList__header">
+            <div>
+              <h3> Chat with other software engineers </h3>
+            </div>
+            <a class="btn btn--main" href="{% url 'login' %}">
+              Sign up now
+            </a>
+          </div>
+
+          <img src="static/images/Chatter.gif"/> 
     </div>
+    {% endif %}
 
     {% include 'base/members.html' %}
 

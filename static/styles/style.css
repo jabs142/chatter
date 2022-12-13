@@ -148,10 +148,8 @@ a {
   content: "";
   display: block;
   position: absolute;
-  background-color: var(--color-gray);
   z-index: 111;
   border-radius: 50%;
-  border: 0.3rem solid var(--color-dark);
 }
 
 .avatar.active::after {
@@ -418,6 +416,15 @@ a {
 .layout--2 > .container > div:last-child {
   flex-basis: 25%;
 }
+
+.layout--1 > .container > div:first-child {
+  flex-basis:20%;
+}
+
+.layout--1 > .container > div:last-child {
+  flex-basis:75%;
+}
+
 /*========== Layout Box ==========*/
 
 .layout__box {
@@ -758,6 +765,13 @@ a {
   padding: 1.5rem;
   border: 2px solid var(--color-dark-medium);
   border-radius: 5px;
+}
+
+.activities__box1 {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid var(--color-light-gray);
+  border-radius:1px;
 }
 
 .activities__boxHeader p {

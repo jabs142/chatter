@@ -20,8 +20,6 @@
         <nav class="header__menu">
 
 
-            <!-- Logged In -->
-
             {% if request.user.is_authenticated %}
             <div class="header__user">
                 <a href="{% url 'update-user' %}">
@@ -40,10 +38,9 @@
 
             {% else %}
 
-            <!-- Not Logged In -->
             <a href="{% url 'login' %}" class="header__logo">
                 <div class="avatar avatar--medium">
-                    <img src="static/images/default-avatar.png">
+                    <img src="{% static 'images/default-avatar.png' %}">
                 </div>
                 <h3>Login</h3>
             </a>

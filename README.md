@@ -26,20 +26,44 @@ Having just learnt Python, I wanted to utilise a Python-based web framework for 
 
 ### General idea:
 * Users should be able to create an account and log in
-* App should be able to verify the user
+
+<p align="center">
+  <img width="460" height="300" src="https://github.com/jabs142/chatter/blob/main/static/images/Signup.gif?raw=true">
+</p>
+
+* App should be able to verify the user and log the user in
+
+<p align="center">
+  <img width="460" height="300" src="https://github.com/jabs142/chatter/blob/main/static/images/Login_1.gif?raw=true">
+</p>
+
 * Users should be able to create breakout rooms 
+
+<p align="center">
+  <img width="460" height="300" src="https://github.com/jabs142/chatter/blob/main/static/images/CreateNewGroup.gif?raw=true">
+</p>
+* Users should be able to add messages into breakout rooms
+
+<p align="center">
+  <img width="460" height="300" src="https://github.com/jabs142/chatter/blob/main/static/images/AddMessage.gif?raw=true">
+</p>
+* Users should be able to search for rooms to join
+<p align="center">
+  <img width="460" height="300" src="https://github.com/jabs142/chatter/blob/main/static/images/SearchRoom.gif?raw=true">
+</p>
+
 * Users should be able to set their profile pictures 
 * Users should be able to change their profile settings 
+<p align="center">
+  <img width="460" height="400" src="https://github.com/jabs142/chatter/blob/main/static/images/Editprofile.png?raw=true">
+</p> 
+
 * Users should be able to log out 
 
 
-<!-- <p align="center">
-  <img width="460" height="300" src="https://github.com/JT142/Dino-Jump/blob/main/images/Wireframe.png?raw=true">
-</p>
 
-<p align="center">
-  <img width="460" height="400" src="https://github.com/JT142/Dino-Jump/blob/main/images/Flowchart.png?raw=true">
-</p> -->
+
+
 
 <br> 
 

@@ -1,42 +1,18 @@
-{% if page == 'login' %}
-
 <div class="topics">
-    <div class="activities__header">
-      <h2> Room topics </h2>
-    </div>
-    <div class="activities__box">
-      <ul class="topics__list">
-        <li>
-        </li>
-        {% for topic in topics %}
-        <li>
-          <a href="{% url 'home' %}?q={{topic.name}}">{{topic.name}}<span>{{topic.room_set.all.count}}</span></a>
-        </li>
-        {% endfor %}
-  
-      </ul>
-    </div>
-  
+  <div class="activities__header">
+    <h2> Topics you might be interested in </h2>
+  </div>
+  <div class="activities__box">
+    <ul class="topics__list">
+      <li>
+      </li>
+      {% for topic in topics %}
+      <li>
+        <a href="{% url 'login' %}?q={{topic.name}}">{{topic.name}}<span>{{topic.room_set.all.count}}</span></a>
+      </li>
+      {% endfor %}
+
+    </ul>
   </div>
 
-{% else %}
-
-  <div class="topics">
-      <div class="activities__header">
-        <h2> Topics you might be interested in </h2>
-      </div>
-      <div class="activities__box">
-        <ul class="topics__list">
-          <li>
-          </li>
-          {% for topic in topics %}
-          <li>
-            <a href="{% url 'login' %}?q={{topic.name}}">{{topic.name}}<span>{{topic.room_set.all.count}}</span></a>
-          </li>
-          {% endfor %}
-    
-        </ul>
-      </div>
-    
-    </div>
-{% endif %}
+</div>
